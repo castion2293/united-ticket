@@ -1,0 +1,9 @@
+/.idea
+/out
+/vendor
+/node_modules
+composer.phar
+composer.lock
+/.DS_Store
+Thumbs.db
+package-lock.json

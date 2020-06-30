@@ -1,0 +1,25 @@
+{
+  "name": "united-ticket",
+  "version": "1.25.5",
+  "description": "整合注單模組主要處理三個工作",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "br-release": "standard-version && VERSION=`awk '/\"version\"/{gsub(/(\"|\",)/,\"\",$2);print $2};' package.json` && git checkout -b $VERSION",
+    "br-push": "VERSION=`awk '/\"version\"/{gsub(/(\"|\",)/,\"\",$2);print $2};' package.json` && git push --set-upstream origin $VERSION && git push --tags",
+    "br-release-auto": "npm run br-release && npm run br-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.sp168.cc:super-platform/laravel-package/united-ticket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard-version": "^4.4.0"
+  }
+}
